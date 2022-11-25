@@ -1,6 +1,45 @@
+/*GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with timeblocks for standard business hours
+WHEN I view the timeblocks for that day
+THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+WHEN I click into a timeblock
+THEN I can enter an event
+WHEN I click the save button for that timeblock
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist*/
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
+var titleEl = $("<h1>");
+var paraEl = $("<p>");
+var currentDayEl = $("#currentDay");
+var rowEl = $(".row");
+var hour9El = $("#hour-9");
+var hour10El = $("#hour-10");
+var hour11El = $("#hour-11");
+var saveButtonEl = $(".saveBtn");
+
+function displayCurrentDay() {
+  var currDay = dayjs().format("MMMM D, YYYY");
+  currentDayEl.text(currDay);
+}
+
+saveButtonEl.on("click", function () {
+ 
+});
+
+function renderEventInput() {
+ // Use JSON.parse() to convert text to JavaScript object
+ hour9El = JSON.parse(localStorage.getItem("hour-9"));
+  if ()
+} 
+
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -8,6 +47,22 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+  // Use .setItem() to store object in storage and JSON.stringify to convert it as a string
+  /*localStorage.setItem("studentGrade", JSON.stringify(studentGrade));
+}
+
+function renderLastGrade() {
+  // Use JSON.parse() to convert text to JavaScript object
+  var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+  // Check if data is returned, if not exit out of the function
+  if (lastGrade !== null) {
+  document.getElementById("saved-name").innerHTML = lastGrade.student;
+  document.getElementById("saved-grade").innerHTML = lastGrade.grade;
+  document.getElementById("saved-comment").innerHTML = lastGrade.comment;
+  } else {
+    return;
+  }
+}*/
   //
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
