@@ -15,7 +15,7 @@ that I could create new timeblocks. I then used the the appendChild method
 but received an error.
 
 *** I was uable to complete everything in the challenge on time,
-but will try to complete and re-submit ***
+but will try to finish and re-submit at a later date ***
 
 
 
